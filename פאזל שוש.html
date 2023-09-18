@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>תמונה V או X</title>
+    <meta charset="UTF-8">
+    <!-- הוסף את ספריית הפונט FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styleshosh.css">
+</head>
+<body>
+    <div class="container">
+        <img id="logo-seso" src="https://www.seeachsod.org/templates/donations/images/logo_new.png" alt="logo-seso">
+        <h2>סדנת תקשורת מקרבת</h2>
+        <h3>פיתוח מקצועי</h3>
+        <div class="form-container">
+            <div class="question-container">
+                <label for="question" class="question">:מס' כרטיס שאלה</label>
+                <input type="number" id="question">
+            </div>
+        </div>
+        <div class="form-container2">
+            <div class="answer-container">
+                <label for="Answer" class="answer">:מס' כרטיס תשובה</label>
+                <input type="number" id="Answer">
+            </div>
+        </div>
+        <div class="button-container">
+            <button type="button" onclick="showImage()">?האם תשובתי נכונה</button>
+        </div>
+            <button id="resetButton" onclick="resetPage()">נקה תוכן</button>
+    </div>
+    <div id="resultText"></div>
+    <img id="resultImage" src="" alt="תמונה">
+    
+    <script>
+        function showImage() {
+            var questionValue = parseInt(document.getElementById("question").value);
+            var AnswerValue = parseInt(document.getElementById("Answer").value);
+            var resultImage = document.getElementById("resultImage");
+            var resultText = document.getElementById("resultText");
+            var resetButton = document.getElementById("resetButton");
+            var spinner = document.createElement("div");
+
+            // הוסף גלגל מסתובב  
+            spinner.className = "spinner";
+            document.body.appendChild(spinner);
+
+            setTimeout(function() {
+                // הסתר את הגלגל מסתובב והצג את התוצאה אחרי כמה שניות
+                spinner.style.display = "none";
+
+                if ((questionValue === 5 && AnswerValue === 3) 
+                || (questionValue === 0 && AnswerValue === 6)
+                || (questionValue === 4 && AnswerValue === 8)
+                || (questionValue === 1 && AnswerValue === 2)
+                || (questionValue === 9 && AnswerValue === 7)
+                || (questionValue === 7 && AnswerValue === 9)
+                || (questionValue === 2 && AnswerValue === 1)
+                || (questionValue === 8 && AnswerValue === 4)
+                || (questionValue === 6 && AnswerValue === 0)
+                || (questionValue === 3 && AnswerValue === 5)) {
+                    resultText.textContent = questionValue + " + " + AnswerValue;
+                    resultText.style.display = "block";
+                    resetButton.style.display = "block";
+                    resultImage.style.display = "block";
+                    resultImage.src = "https://cdn.pixabay.com/photo/2020/06/03/15/06/rope-5255271_640.jpg"; 
+                    
+                    moveLogoToCenter();
+                } else {
+                    resultText.textContent = questionValue + " + " + AnswerValue;
+                    resultText.style.display = "block";
+                    resetButton.style.display = "block";
+                    resultImage.style.display = "block";
+                    resultImage.src = "https://cdn.pixabay.com/photo/2012/05/07/02/13/cancel-47588_640.png"; 
+                    logoSeso.style.display = "block";
+                }
+            }, 3500); 
+        }
+
+        function resetPage() {
+            var resultImage = document.getElementById("resultImage");
+            var resultText = document.getElementById("resultText");
+            var resetButton = document.getElementById("resetButton");
+            var question = document.getElementById("question");
+            var answer = document.getElementById("Answer");
+
+            resultImage.style.display = "none";
+            resultText.style.display = "none";
+            resetButton.style.display = "none";
+            question.value = "";
+            answer.value = "";
+        }
+
+        function moveLogoToCenter() {
+            var logoSeso = document.getElementById("logo-seso");
+            logoSeso.style.position = "fixed";
+            logoSeso.style.top = "50%";
+            logoSeso.style.left = "50%";
+            logoSeso.style.transform = "translate(-50%, -50%)";
+            logoSeso.style.zIndex = "9999";
+        }
+    </script>
+</body>
+</html>
