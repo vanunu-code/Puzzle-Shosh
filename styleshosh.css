@@ -119,8 +119,8 @@ h2,h3 {
     position:absolute;
     top: 0;
     z-index: 1;
-    width: 20%;
-    height: auto;
+width: 20%;
+height: auto;
     }
 
 @keyframes spin {
@@ -140,3 +140,4 @@ h2,h3 {
     .form-container2 {
         width: 90%;
     }
+}
