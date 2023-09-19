@@ -154,4 +154,7 @@ h2, h3 {
     .form-container2 {
         width: 80%; 
     }
+    #resultImage {
+    max-width: 90%;
+    max-height: 90%;
 }
