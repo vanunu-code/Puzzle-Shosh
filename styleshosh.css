@@ -15,6 +15,7 @@ body {
     align-items: center;
     text-align: center;
     background-color: #b0f1fa;
+    border-radius: 10px;
     padding: 20px;
     
 }
@@ -72,7 +73,7 @@ label {
 
 #resultImage {
     max-width: 20%;
-    max-height: auto;
+    max-height:auto;
     display: none;
     margin-top: 20px;
     border: 2px solid #75b5fd;
