@@ -71,8 +71,8 @@ label {
   }
 
 #resultImage {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 20%;
+    max-height: auto;
     display: none;
     margin-top: 20px;
     border: 2px solid #75b5fd;
