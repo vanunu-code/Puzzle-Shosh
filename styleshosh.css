@@ -119,7 +119,7 @@ h2, h3 {
 /* סגנון לגלגל התקדמות */
 .spinner {
     border: 5px solid rgba(0, 0, 0, 0.3);
-    border-top: 5px solid hsl(197, 100%, 72%); /* צבע ספיר */
+    border-top: 5px solid hsl(32, 75%, 51%); /* צבע ספיר */
     border-radius: 50%;
     width: 30px;
     height: 30px;
