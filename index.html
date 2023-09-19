@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>תקשורת מקרבת- פאזל שוש</title>
+    <title>תקשורת מקרבת- שוש</title>
     <meta charset="UTF-8">
+    <!-- הוסף את ספריית הפונט FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="styleshosh.css">
 </head>
@@ -11,23 +12,27 @@
         <img id="logo-seso" src="https://www.seeachsod.org/templates/donations/images/logo_new.png" alt="logo-seso">
         <h2>סדנת תקשורת מקרבת</h2>
         <h3>פיתוח מקצועי</h3>
-        <div class="form-container">
-            <div class="question-container">
-                <label for="question" class="question">:מס' כרטיס שאלה</label>
-                <input type="number" id="question">
+        <div class="question-answer-container">
+
+            <div class="form-container2">
+                <div class="answer-container">
+                    <label for="Answer" class="answer">:מס' כרטיס תשובה</label>
+                    <input type="number" id="Answer">
+                </div>
             </div>
-        </div>
-        <div class="form-container2">
-            <div class="answer-container">
-                <label for="Answer" class="answer">:מס' כרטיס תשובה</label>
-                <input type="number" id="Answer">
+            <div class="form-container">
+                <div class="question-container">
+                    <label for="question" class="question">:מס' כרטיס שאלה</label>
+                    <input type="number" id="question">
+                </div>
             </div>
         </div>
         <div class="button-container">
             <button type="button" onclick="showImage()">?האם תשובתי נכונה</button>
         </div>
-            <button id="resetButton" onclick="resetPage()">נקה תוכן</button>
+        <button id="resetButton" onclick="resetPage()">נקה תוכן</button>
     </div>
+    
     <div id="resultText"></div>
     <img id="resultImage" src="" alt="תמונה">
     
@@ -40,10 +45,12 @@
             var resetButton = document.getElementById("resetButton");
             var spinner = document.createElement("div");
 
+            // הוסף גלגל מסתובב  
             spinner.className = "spinner";
             document.body.appendChild(spinner);
 
             setTimeout(function() {
+                // הסתר את הגלגל מסתובב והצג את התוצאה אחרי כמה שניות
                 spinner.style.display = "none";
 
                 if ((questionValue === 5 && AnswerValue === 3) 
@@ -87,6 +94,7 @@
             question.value = "";
             answer.value = "";
         }
+
     </script>
 </body>
 </html>
